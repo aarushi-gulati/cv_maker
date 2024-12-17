@@ -1,4 +1,4 @@
-import { Education, Experience } from "./sections";
+import { Education, Experience } from "./Sections";
 
 function resume(props) {
     const generalInfo = props.general;
