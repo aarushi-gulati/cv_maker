@@ -15,15 +15,15 @@ function resume(props) {
                 </div>
                 <div className="contacts">
                     <div className="contact">
-                    <img src="public/email (2).svg" className="icon" />
+                    <img src="/email (2).svg" className="icon" />
                     {generalInfo.email}
                     </div>
                     <div className="contact">
-                    <img src="public/phone (1).svg" className="icon" />
+                    <img src="/phone (1).svg" className="icon" />
                     {generalInfo.contact}
                     </div>
                     <div className="contact">
-                    <img src="public/map-marker (1).svg" className="icon" />
+                    <img src="/map-marker (1).svg" className="icon" />
                     {generalInfo.location}
                     </div>
                 </div>
