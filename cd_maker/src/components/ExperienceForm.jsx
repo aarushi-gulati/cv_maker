@@ -2,6 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"; 
 import Icon from '@mdi/react';
 import { mdiDelete } from '@mdi/js';
+import "../styles/form.css"
 
 export function ExperienceForm({ experienceInfo, onChange }) {
     const [editingStatus, setEditingStatus] = useState("saved");
@@ -59,10 +60,12 @@ export function ExperienceForm({ experienceInfo, onChange }) {
 function SavedExperience({ companys, onClickEdit, onClickAdd, onClickDelete }) {
     const companysList = companys.map((company) => 
         <li key={company.id} id={company.id}>
+            <div className="sectionSaved">
             <div onClick={onClickEdit} id={company.id}>
             {company.name}
             </div>
             <Icon path={mdiDelete} size={1} onClick={() => onClickDelete(company.id)}/>
+            </div>
             </li>
     )
 
@@ -94,8 +97,9 @@ function AddExperience({ onClickSave }) {
         <>
             <h1>Add Experience: </h1>
             <form onSubmit={handleSubmit}>
+                <div className="container">
                 <label>
-                    company Name: <input name="name" />
+                    Company Name: <input name="name" />
                 </label>
                 <label>
                     Position Title: <input name="title" />
@@ -110,9 +114,10 @@ function AddExperience({ onClickSave }) {
                     Location: <input name="location" />
                 </label>
                 <label>
-                    Description: <input name="desc" />
+                    Description: <input name="desc" type="text"/>
                 </label>
-                <button type="submit">Save</button>
+                </div> 
+                <button type="submit" className="button">Save</button>
             </form>
         </>
     )
@@ -141,8 +146,9 @@ function EditExperience({ company, onClickSave, onClickCancel }) {
         <>
             <h1>Add Experience: </h1>
             <form onSubmit={handleSubmit}>
+                <div className="container">
                 <label>
-                    company Name: <input name="name" defaultValue={company.name}/>
+                    Company Name: <input name="name" defaultValue={company.name}/>
                 </label>
                 <label>
                     Position Title: <input name="title" defaultValue={company.title} />
@@ -159,8 +165,11 @@ function EditExperience({ company, onClickSave, onClickCancel }) {
                 <label>
                     Description: <input name="desc" defaultValue={company.desc} />
                 </label>
-                <button type="submit">Save</button>
-                <button onClick={onClickCancel}>Cancel</button>
+                </div>
+                <div className="buttonContainer">
+                    <button type="submit">Save</button>
+                    <button onClick={onClickCancel}>Cancel</button>
+                </div>
             </form>
         </>
     )

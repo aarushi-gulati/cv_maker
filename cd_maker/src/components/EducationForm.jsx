@@ -2,6 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"; 
 import Icon from '@mdi/react';
 import { mdiDelete } from '@mdi/js';
+import "../styles/form.css"
 
 export function EducationForm({ educationInfo, onChange }) {
     const [editingStatus, setEditingStatus] = useState("saved");
@@ -60,11 +61,13 @@ function SavedEducation({ institutes, onClickEdit, onClickAdd, onClickDelete }) 
 
     const institutesList = institutes.map((institute) => 
         <li key={institute.id} id={institute.id}>
+            <div className="sectionSaved">
             <div onClick={onClickEdit} id={institute.id}>
             {institute.name}
             </div>
             <Icon path={mdiDelete} size={1} onClick={() => onClickDelete(institute.id)}/>
-            </li>
+            </div>
+        </li>
     )
 
     return (
@@ -95,9 +98,11 @@ function AddEducation({ onClickSave }) {
         <>
             <h1>Add Education: </h1>
             <form onSubmit={handleSubmit}>
+                <div className="container">
                 <label>
                     Institute Name: <input name="name" />
                 </label>
+                <label></label>
                 <label>
                     Degree Name: <input name="degree" />
                 </label>
@@ -110,7 +115,8 @@ function AddEducation({ onClickSave }) {
                 <label>
                     Grade: <input name="grade" />
                 </label>
-                <button type="submit">Save</button>
+                </div>
+                <button type="submit" className="button">Save</button>
             </form>
         </>
     )
@@ -139,6 +145,7 @@ function EditEducation({ institute, onClickSave, onClickCancel }) {
         <>
             <h1>Add Education: </h1>
             <form onSubmit={handleSubmit}>
+                <div className="container">
                 <label>
                     Institute Name: <input name="name" defaultValue={institute.name}/>
                 </label>
@@ -154,8 +161,11 @@ function EditEducation({ institute, onClickSave, onClickCancel }) {
                 <label>
                     Grade: <input name="grade" defaultValue={institute.grade} />
                 </label>
-                <button type="submit">Save</button>
-                <button onClick={onClickCancel}>Cancel</button>
+                </div>
+                <div className="buttonContainer">
+                    <button type="submit">Save</button>
+                    <button onClick={onClickCancel}>Cancel</button>
+                </div>
             </form>
         </>
     )

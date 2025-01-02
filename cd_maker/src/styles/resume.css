@@ -1,0 +1,58 @@
+#header {
+    min-height: 15vh;
+    background-color: #E97A7A;
+    min-width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#name {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.contacts {
+    min-width: 40vw;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    font-size: 1zzzrem;
+    margin-bottom: 10px;
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+.heading {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.line {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.orgName {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.sectionRow {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    align-items: center;
+}

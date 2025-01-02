@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;   
+  }
+
+.button {
+    margin-top: 20px;
+}
+
+.sectionSaved {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 250px;
+  align-items: center;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}

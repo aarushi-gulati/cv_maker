@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/form.css"
 
 export function GeneralFormEditable ({ onSubmit, generalInfo }) {
 
@@ -16,6 +17,7 @@ export function GeneralFormEditable ({ onSubmit, generalInfo }) {
         <>
             <h1>General: </h1>
             <form onSubmit={(e) => { e.preventDefault(); onSubmit(tempGeneralInfo); }}>
+                <div className="container">
                 <label>
                     Name: <input name="name" defaultValue={generalInfo.name} onChange={handleChange} />
                 </label>
@@ -28,7 +30,8 @@ export function GeneralFormEditable ({ onSubmit, generalInfo }) {
                 <label>
                     Location: <input name="location" defaultValue={generalInfo.location} onChange={handleChange} />
                 </label>
-                <button type="submit">Save</button>
+                </div>
+                <button type="submit" className="button">Save</button>
             </form>
         </>
     )
@@ -38,7 +41,8 @@ export function GeneralFormSaved ({ generalInfo, onClick }) {
     return (
         <>
             <h1>General: </h1>
-            <form onSubmit={(e) => { e.preventDefault(); onSubmit(tempGeneralInfo); }}>
+            <form onSubmit={(e) => { e.preventDefault(); onSubmit(generalInfo); }}>
+                <div className="container">
                 <label>
                     Name: {generalInfo.name}
                 </label>
@@ -51,7 +55,8 @@ export function GeneralFormSaved ({ generalInfo, onClick }) {
                 <label>
                     Location: {generalInfo.location}
                 </label>
-                <button onClick={onClick}>Edit</button>
+                </div>
+                <button onClick={onClick} className="button">Edit</button>
             </form>
         </>
     )
